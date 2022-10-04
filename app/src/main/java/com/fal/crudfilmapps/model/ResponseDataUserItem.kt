@@ -5,17 +5,17 @@ import com.google.gson.annotations.SerializedName
 
 data class ResponseDataUserItem(
     @SerializedName("address")
-    val address: String,
+    var address: String,
     @SerializedName("age")
-    val age: Int,
+    var age: Int,
     @SerializedName("id")
-    val id: String,
+    var id: String,
     @SerializedName("nama")
-    val nama: String,
+    var nama: String,
     @SerializedName("name")
-    val name: String,
+    var name: String,
     @SerializedName("password")
-    val password: String,
+    var password: String,
     @SerializedName("username")
-    val username: String
+    var username: String
 )

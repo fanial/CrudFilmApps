@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/fragmentSplash">
+    app:startDestination="@id/fragmentLogin">
 
     <fragment
         android:id="@+id/fragmentSplash"
@@ -48,6 +48,9 @@
             app:destination="@id/fragmentRegister" />
         <action
             android:id="@+id/action_fragmentLogin_to_fragmentHome"
+            app:destination="@id/fragmentHome" />
+        <action
+            android:id="@+id/action_fragmentLogin_to_fragmentHome2"
             app:destination="@id/fragmentHome" />
     </fragment>
     <fragment

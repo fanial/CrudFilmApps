@@ -7,8 +7,8 @@ import com.bumptech.glide.Glide
 import com.fal.crudfilmapps.databinding.ItemListBinding
 import com.fal.crudfilmapps.model.ResponseDataFilmItem
 
-class AdapterFilm(val itemFilm : List<ResponseDataFilmItem> ): RecyclerView.Adapter<AdapterFilm.ViewHolder>() {
-    class ViewHolder(val binding : ItemListBinding): RecyclerView.ViewHolder(TODO()) {
+class AdapterFilm(var itemFilm : List<ResponseDataFilmItem> ): RecyclerView.Adapter<AdapterFilm.ViewHolder>() {
+    class ViewHolder(val binding : ItemListBinding): RecyclerView.ViewHolder(binding.root) {
 
     }
 
@@ -29,5 +29,9 @@ class AdapterFilm(val itemFilm : List<ResponseDataFilmItem> ): RecyclerView.Adap
 
     override fun getItemCount(): Int {
         return itemFilm.size
+    }
+
+    fun setData(data : ArrayList<ResponseDataFilmItem>){
+        this.itemFilm = data
     }
 }

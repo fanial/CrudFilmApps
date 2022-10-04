@@ -6,12 +6,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.fal.crudfilmapps.R
 import com.fal.crudfilmapps.adapter.AdapterFilm
 import com.fal.crudfilmapps.databinding.FragmentHomeBinding
 import com.fal.crudfilmapps.model.ResponseDataFilmItem
 import com.fal.crudfilmapps.network.RetrofitClient
+import com.fal.crudfilmapps.viewModel.ViewModelFilm
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -21,6 +25,8 @@ class FragmentHome : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
+    lateinit var adapterFilm: AdapterFilm
+    lateinit var modelFilm: ViewModelFilm
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,6 +41,15 @@ class FragmentHome : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         //show list film
         showList()
+        //VM
+        modelFilm = ViewModelProvider(this).get(ViewModelFilm::class.java)
+        modelFilm.allLiveData().observe(viewLifecycleOwner, Observer {
+            adapterFilm.setData(it as ArrayList<ResponseDataFilmItem>)
+        })
+        //RV
+        adapterFilm = AdapterFilm(ArrayList())
+        binding.rvFilm.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        binding.rvFilm.adapter = adapterFilm
     }
 
     override fun onDestroy() {
@@ -50,7 +65,7 @@ class FragmentHome : Fragment() {
                     response: Response<List<ResponseDataFilmItem>>,
                 ) {
                     if (response.isSuccessful){
-                        binding.rvFilm.layoutManager = GridLayoutManager(context, 3)
+                        binding.rvFilm.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
                         binding.rvFilm.adapter = AdapterFilm(response.body()!!)
                         Toast.makeText(context, "Load Data Success", Toast.LENGTH_LONG).show()
                     }else{

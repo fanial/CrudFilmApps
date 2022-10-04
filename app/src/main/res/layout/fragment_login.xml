@@ -75,6 +75,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/can_t_login"
+        android:visibility="invisible"
         android:layout_marginLeft="35dp"
         android:layout_marginRight="35dp"
         android:textColor="@color/primary_pink"

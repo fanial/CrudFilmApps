@@ -11,13 +11,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.Navigation
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.fal.crudfilmapps.R
 import com.fal.crudfilmapps.databinding.FragmentLoginBinding
-import com.fal.crudfilmapps.model.ResponseDataUser
 import com.fal.crudfilmapps.model.ResponseDataUserItem
 import com.fal.crudfilmapps.network.RetrofitClient
-import com.fal.crudfilmapps.network.RetrofitClientUser
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -49,7 +46,7 @@ class FragmentLogin : Fragment() {
     }
 
     fun auth(username : String, password : String){
-            RetrofitClientUser.instance.getAllUser()
+            RetrofitClient.instance.getAllUser()
                 .enqueue(object : Callback<List<ResponseDataUserItem>> {
                     override fun onResponse(
                         call: Call<List<ResponseDataUserItem>>,
@@ -70,7 +67,9 @@ class FragmentLogin : Fragment() {
                                         addData.apply()
                                         gotoHome()
                                         Toast.makeText(context, "Login Berhasil", Toast.LENGTH_SHORT).show()
+                                        binding.tvAlertCantLogin.visibility = View.INVISIBLE
                                     } else {
+                                        binding.tvAlertCantLogin.visibility = View.VISIBLE
 //                                        Toast.makeText(context, "Username / Password salah", Toast.LENGTH_SHORT).show()
                                     }
                                 }

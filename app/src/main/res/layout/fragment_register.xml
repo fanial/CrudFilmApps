@@ -30,7 +30,7 @@
         android:textSize="30sp"
         android:layout_marginLeft="35dp"
         android:layout_marginRight="35dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintHorizontal_bias="0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -72,7 +72,30 @@
             android:textColor="@color/primary_white"
             android:fontFamily="@font/poppins_semibold"
             android:backgroundTint="@color/primary_white"/>
-
+        <EditText
+            android:id="@+id/etRegisterAge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/age"
+            android:layout_marginTop="15dp"
+            android:inputType="number"
+            android:textColorHint="@color/primary_white"
+            android:textSize="15sp"
+            android:textColor="@color/primary_white"
+            android:fontFamily="@font/poppins_semibold"
+            android:backgroundTint="@color/primary_white"/>
+        <EditText
+            android:id="@+id/etRegisterAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/address"
+            android:layout_marginTop="15dp"
+            android:inputType="textEmailAddress"
+            android:textColorHint="@color/primary_white"
+            android:textSize="15sp"
+            android:textColor="@color/primary_white"
+            android:fontFamily="@font/poppins_semibold"
+            android:backgroundTint="@color/primary_white"/>
         <EditText
             android:id="@+id/etRegisterPassword"
             android:layout_width="match_parent"

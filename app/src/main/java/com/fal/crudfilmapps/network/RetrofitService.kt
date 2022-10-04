@@ -19,4 +19,6 @@ interface RetrofitService {
     @GET("user")
     fun getAllUser() : Call<List<ResponseDataUserItem>>
 
+    @POST("user")
+    fun postUser(@Body user : ResponseDataUserItem) : Call<ResponseDataUserItem>
 }

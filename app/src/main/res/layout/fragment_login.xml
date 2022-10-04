@@ -20,6 +20,51 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintVertical_bias="0"/>
 
+    <TextView
+        android:id="@+id/tvWelcomeBack"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Welcome Back"
+        android:textColor="@color/primary_white"
+        android:fontFamily="@font/poppins_semibold"
+        android:textSize="30sp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginTop="70dp"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintTop_toBottomOf="@+id/ivBackToHome" />
 
+    <EditText
+        android:id="@+id/etLoginEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginTop="150dp"
+        android:backgroundTint="@color/primary_grey"
+        android:hint="@string/email"
+        android:fontFamily="@font/poppins_semibold"
+        android:textColor="@color/primary_black"
+        android:textColorHint="@color/primary_grey"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvWelcomeBack"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginTop="10dp"
+        android:hint="@string/password"
+        android:textColor="@color/primary_black"
+        android:fontFamily="@font/poppins_semibold"
+        android:backgroundTint="@color/primary_grey"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etLoginEmail"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

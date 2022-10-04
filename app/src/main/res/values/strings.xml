@@ -11,4 +11,5 @@
     <string name="forgot_password">Forgot password</string>
     <string name="skip">Skip</string>
     <string name="akufilm">AkuFilm</string>
+    <string name="can_t_login">Can\'t login</string>
 </resources>

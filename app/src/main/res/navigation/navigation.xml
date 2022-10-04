@@ -33,7 +33,11 @@
         android:id="@+id/fragmentRegister"
         android:name="com.fal.crudfilmapps.fragment.FragmentRegister"
         android:label="fragment_register"
-        tools:layout="@layout/fragment_register" />
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_fragmentRegister_to_fragmentLogin"
+            app:destination="@id/fragmentLogin" />
+    </fragment>
     <fragment
         android:id="@+id/fragmentLogin"
         android:name="com.fal.crudfilmapps.fragment.FragmentLogin"
@@ -42,6 +46,9 @@
         <action
             android:id="@+id/action_fragmentLogin_to_fragmentRegister"
             app:destination="@id/fragmentRegister" />
+        <action
+            android:id="@+id/action_fragmentLogin_to_fragmentHome"
+            app:destination="@id/fragmentHome" />
     </fragment>
     <fragment
         android:id="@+id/fragmentDetail"

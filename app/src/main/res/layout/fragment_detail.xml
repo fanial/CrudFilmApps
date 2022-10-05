@@ -1,14 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.FragmentDetail">
+    tools:context=".fragment.FragmentDetail"
+    android:orientation="vertical">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="233dp"
+        android:src="@drawable/logo_aku_film"
+        android:id="@+id/tvgambar"/>
 
-</FrameLayout>
+    <ImageButton
+        android:id="@+id/Btnback"
+        android:layout_width="51dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/white"
+        android:src="@drawable/ic_baseline_arrow_back_24" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvgambar"
+        android:layout_marginTop="14dp"
+        android:id="@+id/tentang">
+
+        <TextView
+            android:id="@+id/tvjudul"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="Mr Robot"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvjudul"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="4dp"
+            android:text="Crime"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tvMM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvjudul"
+            android:layout_alignRight="@+id/tvM"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="-43dp"
+            android:text="Drama"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tvtahun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvM"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="3dp"
+            android:text="2015"
+            android:textColor="@color/black"
+            android:textSize="10sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvMM"
+            android:layout_alignRight="@+id/tvtahun"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="-42dp"
+            android:text="18 +"
+            android:textColor="@color/black"
+            android:textSize="10sp" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="37dp"
+            android:layout_alignRight="@+id/tvjudul"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="28dp"
+            android:background="@color/white"
+            android:src="@drawable/ic_baseline_bookmark_border_24"
+            android:layout_marginTop="10dp"
+            android:id="@+id/BtnSave"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dekripsi"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_below="@+id/tentang"
+        android:id="@+id/tvdek"/>
+
+    <RelativeLayout
+        android:layout_width="372dp"
+        android:layout_height="187dp"
+        android:layout_below="@+id/tvdek"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="9dp"
+        android:id="@+id/tvisidek">
+
+        <TextView
+            android:id="@+id/tvdekt"
+            android:layout_width="363dp"
+            android:layout_height="183dp"
+            android:text="Walaupun seperti memiliki kelainan mental, Elliot berusaha melindungi orang-orang dengan caranya sendiri. Satu waktu dia melucuti pemilik kafe yang ternyata merupakan seorang pedofil. Meski ditawari sejumlah uang untuk tidak melaporkan kepada polisi, Elliot tidak memperdulikannya. Begitu juga saat dia mencoba untuk membentengi teman semasa kecil, Angela, maupun konselornya, Krista, dari orang-orang jahat. Sebelum mengkonfrontir orang yang memperhatikan, ia selalu mendapat bukti konkret dari keahliannya yaitu hacking."
+            android:textAlignment="viewStart"/>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/Btntonton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvisidek"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/purple_700"
+        android:text="Tonton sekarang" />
+
+    <Button
+        android:id="@+id/Btntrailer"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_below="@+id/Btntonton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="3dp"
+        android:backgroundTint="@color/purple_700"
+        android:text="Trailer" />
+
+
+</RelativeLayout>

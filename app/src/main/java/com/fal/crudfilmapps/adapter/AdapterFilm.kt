@@ -44,10 +44,16 @@ class AdapterFilm(var itemFilm : List<ResponseDataFilmItem> ): RecyclerView.Adap
 //        }
 
         holder.binding.btnDetail.setOnClickListener{
-            val bundle = Bundle()
-            bundle.putInt("delete",itemFilm[position].id.toInt())
-            Navigation.findNavController(it).navigate(R.id.action_fragmentHome_to_deleteFragmentDialog,bundle)
-
+//            val bundle = Bundle()
+//            bundle.putInt("delete",itemFilm[position].id.toInt())
+//            Navigation.findNavController(it).navigate(R.id.action_fragmentHome_to_deleteFragmentDialog,bundle)
+                val bundle = Bundle()
+                bundle.putString("date",itemFilm[position].date)
+                bundle.putString("judul",itemFilm[position].name)
+                bundle.putString("gambar",itemFilm[position].image)
+                bundle.putString("Dekripsi",itemFilm[position].description)
+                bundle.putString("id",itemFilm[position].id)
+                Navigation.findNavController(it).navigate(R.id.action_fragmentHome_to_fragmentDetail,bundle)
 //            val view = View.inflate(it.context,R.layout.fragment_delete_dialog,null)
 //            val builder = AlertDialog.Builder(it.context)
 //            builder.setView(view)

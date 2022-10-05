@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/primary_purple"
-    tools:context=".fragment.FragmentHome">
+    tools:context=".fragment.FragmentHome"
+    >
 
     <LinearLayout
         android:id="@+id/llHeader"
@@ -55,12 +56,14 @@
         android:id="@+id/rvFilm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:listitem="@layout/item_list"
         android:layout_marginTop="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/llHeader"/>
+        app:layout_constraintTop_toBottomOf="@+id/llHeader"
+        app:layout_constraintVertical_bias="0.49"
+        tools:listitem="@layout/item_list" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fbAddFilm"

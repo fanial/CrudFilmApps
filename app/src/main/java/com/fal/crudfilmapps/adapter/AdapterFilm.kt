@@ -48,13 +48,13 @@ class AdapterFilm(var itemFilm : List<ResponseDataFilmItem> ): RecyclerView.Adap
             bundle.putInt("delete",itemFilm[position].id.toInt())
             Navigation.findNavController(it).navigate(R.id.action_fragmentHome_to_deleteFragmentDialog,bundle)
 
-            val view = View.inflate(it.context,R.layout.fragment_delete_dialog,null)
-            val builder = AlertDialog.Builder(it.context)
-            builder.setView(view)
-
-            val dialog = builder.create()
-            dialog.show()
-            dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+//            val view = View.inflate(it.context,R.layout.fragment_delete_dialog,null)
+//            val builder = AlertDialog.Builder(it.context)
+//            builder.setView(view)
+//
+//            val dialog = builder.create()
+//            dialog.show()
+//            dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
 
 
         }

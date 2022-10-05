@@ -50,6 +50,9 @@ class FragmentHome : Fragment() {
         adapterFilm = AdapterFilm(ArrayList())
         binding.rvFilm.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         binding.rvFilm.adapter = adapterFilm
+
+
+
     }
 
     override fun onDestroy() {

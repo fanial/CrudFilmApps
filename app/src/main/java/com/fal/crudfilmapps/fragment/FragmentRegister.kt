@@ -35,6 +35,9 @@ class FragmentRegister : Fragment() {
         binding.ibSignUp.setOnClickListener{
             postUser()
         }
+        binding.tvGotoSignIn.setOnClickListener{
+            gotoLogin()
+        }
     }
 
     fun postUser(){

@@ -28,6 +28,12 @@
         <action
             android:id="@+id/action_fragmentHome_to_fragmentAdd"
             app:destination="@id/fragmentAdd" />
+        <action
+            android:id="@+id/action_fragmentHome_to_fragmentUpdate"
+            app:destination="@id/fragmentUpdate" />
+        <action
+            android:id="@+id/action_fragmentHome_to_deleteFragmentDialog"
+            app:destination="@id/deleteFragmentDialog" />
     </fragment>
     <fragment
         android:id="@+id/fragmentRegister"
@@ -71,5 +77,18 @@
         android:id="@+id/fragmentUpdate"
         android:name="com.fal.crudfilmapps.fragment.FragmentUpdate"
         android:label="fragment_update"
-        tools:layout="@layout/fragment_update" />
+        tools:layout="@layout/fragment_update" >
+        <action
+            android:id="@+id/action_fragmentUpdate_to_fragmentHome"
+            app:destination="@id/fragmentHome" />
+    </fragment>
+    <fragment
+        android:id="@+id/deleteFragmentDialog"
+        android:name="com.fal.crudfilmapps.fragment.DeleteFragmentDialog"
+        android:label="fragment_delete_dialog"
+        tools:layout="@layout/fragment_delete_dialog" >
+        <action
+            android:id="@+id/action_deleteFragmentDialog_to_fragmentHome"
+            app:destination="@id/fragmentHome" />
+    </fragment>
 </navigation>

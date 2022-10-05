@@ -1,12 +1,11 @@
 package com.fal.crudfilmapps.network
 
 import com.fal.crudfilmapps.model.DataFilm
+import com.fal.crudfilmapps.model.PutResponseFilm
 import com.fal.crudfilmapps.model.ResponseDataFilmItem
 import com.fal.crudfilmapps.model.ResponseDataUserItem
 import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface RetrofitService {
 
@@ -21,4 +20,10 @@ interface RetrofitService {
 
     @POST("user")
     fun postUser(@Body user : ResponseDataUserItem) : Call<ResponseDataUserItem>
+
+    @PUT("film/{id}")
+    fun updateFilm(@Path("id") id : Int, @Body request : DataFilm) : Call<List<PutResponseFilm>>
+
+    @DELETE("film/{id}")
+    fun deleteFilm(@Path("id") id : Int) : Call<Int>
 }

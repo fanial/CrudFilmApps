@@ -1,10 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragment.FragmentUpdate">
 
 
+    <EditText
+        android:id="@+id/etNameFilm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
 
-</FrameLayout>
+        android:hint="Name Film"
+
+        />
+
+    <EditText
+        android:id="@+id/etDirectorFilm"
+        android:layout_below="@id/etNameFilm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Director"
+
+        />
+
+    <EditText
+        android:id="@+id/etDescFilm"
+        android:layout_below="@id/etDirectorFilm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Description"
+
+        />
+
+    <EditText
+        android:id="@+id/etImageFIlm"
+        android:layout_below="@id/etDescFilm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Image Link"
+
+        />
+    <Button
+        android:id="@+id/btnUpdate"
+        android:layout_below="@id/etImageFIlm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Update"
+        android:textAllCaps="false"
+        />
+
+
+
+</RelativeLayout>

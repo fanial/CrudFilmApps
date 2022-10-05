@@ -2,19 +2,23 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/btn_detail"
+    app:cardCornerRadius="20dp"
     android:layout_margin="10dp">
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="5dp">
+        android:background="@color/primary_white"
+        android:padding="10dp">
 
         <ImageView
             android:id="@+id/image"
             android:layout_width="100dp"
             android:layout_height="150dp"
-            android:contentDescription="image"/>
+            android:background="@color/primary_purple"
+            android:contentDescription="@string/image"/>
 
         <TextView
             android:id="@+id/name"
@@ -22,7 +26,9 @@
             android:layout_marginStart="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="film name"
+            android:hint="@string/film_name"
+            android:textColor="@color/primary_white"
+            android:textColorHint="@color/primary_purple"
             android:textStyle="bold"
             android:textSize="20sp"/>
 
@@ -31,9 +37,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
+            android:textColor="@color/primary_white"
+            android:textColorHint="@color/primary_pink"
             android:layout_toEndOf="@id/image"
             android:layout_below="@id/name"
-            android:hint="director"/>
+            android:hint="@string/director"/>
 
     </RelativeLayout>
 

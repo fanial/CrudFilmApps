@@ -14,4 +14,8 @@
     <string name="skip">Skip</string>
     <string name="akufilm">AkuFilm</string>
     <string name="can_t_login">Username / Password salah</string>
+    <string name="image">image</string>
+    <string name="film_name">film name</string>
+    <string name="director">director</string>
+    <string name="search">search</string>
 </resources>

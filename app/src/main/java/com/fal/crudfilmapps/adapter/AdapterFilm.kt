@@ -1,21 +1,13 @@
 package com.fal.crudfilmapps.adapter
 
-import android.app.AlertDialog
-import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.fal.crudfilmapps.R
 import com.fal.crudfilmapps.databinding.ItemListBinding
-import com.fal.crudfilmapps.fragment.DeleteFragmentDialog
-import com.fal.crudfilmapps.fragment.FragmentDetail
-import com.fal.crudfilmapps.fragment.FragmentUpdate
-import com.fal.crudfilmapps.model.DataFilm
 import com.fal.crudfilmapps.model.PutResponseFilm
 import com.fal.crudfilmapps.model.ResponseDataFilmItem
 
@@ -52,7 +44,7 @@ class AdapterFilm(var itemFilm : List<ResponseDataFilmItem> ): RecyclerView.Adap
                 bundle.putString("judul",itemFilm[position].name)
                 bundle.putString("gambar",itemFilm[position].image)
                 bundle.putString("Dekripsi",itemFilm[position].description)
-                bundle.putString("id",itemFilm[position].id)
+                bundle.putInt("id",itemFilm[position].id.toInt())
                 Navigation.findNavController(it).navigate(R.id.action_fragmentHome_to_fragmentDetail,bundle)
 //            val view = View.inflate(it.context,R.layout.fragment_delete_dialog,null)
 //            val builder = AlertDialog.Builder(it.context)

@@ -67,6 +67,9 @@
         <action
             android:id="@+id/action_fragmentDetail_to_fragmentUpdate"
             app:destination="@id/fragmentUpdate" />
+        <action
+            android:id="@+id/action_fragmentDetail_to_deleteFragmentDialog"
+            app:destination="@id/deleteFragmentDialog" />
     </fragment>
     <fragment
         android:id="@+id/fragmentAdd"

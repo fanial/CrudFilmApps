@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/primary_purple"
     tools:context=".fragment.FragmentDetail"
     android:orientation="vertical">
 
@@ -19,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="20dp"
-        android:background="@color/white"
+        android:background="@color/primary_purple"
         android:src="@drawable/ic_baseline_arrow_back_24" />
 
     <RelativeLayout
@@ -91,7 +92,7 @@
             android:layout_alignRight="@+id/tvjudul"
             android:layout_alignParentRight="true"
             android:layout_marginRight="28dp"
-            android:background="@color/white"
+            android:background="@color/primary_purple"
             android:src="@drawable/ic_baseline_bookmark_border_24"
             android:layout_marginTop="10dp"
             android:id="@+id/BtnSave"/>
@@ -125,25 +126,59 @@
             android:textAlignment="viewStart"/>
     </RelativeLayout>
 
-    <Button
-        android:id="@+id/Btntonton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tvisidek"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="8dp"
-        android:backgroundTint="@color/purple_700"
-        android:text="Tonton sekarang" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_below="@id/tvisidek"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/Btntrailer"
-        android:layout_width="wrap_content"
-        android:layout_height="36dp"
-        android:layout_below="@+id/Btntonton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="3dp"
-        android:backgroundTint="@color/purple_700"
-        android:text="Trailer" />
+        <Button
+            android:id="@+id/btnEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit Data"
+            android:backgroundTint="#6200EE"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            />
+        <Button
+            android:id="@+id/btnDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FF0019"
+            android:text="Hapus"
+            />
+
+
+
+
+
+
+    </LinearLayout>
+
+<!--    <Button-->
+<!--        android:id="@+id/Btntonton"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@+id/tvisidek"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        android:backgroundTint="@color/purple_700"-->
+<!--        android:text="Tonton sekarang" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/Btntrailer"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="36dp"-->
+<!--        android:layout_below="@+id/Btntonton"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginTop="3dp"-->
+<!--        android:backgroundTint="@color/purple_700"-->
+<!--        android:text="Trailer" />-->
 
 
 </RelativeLayout>

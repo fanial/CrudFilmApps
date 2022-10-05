@@ -1,5 +1,7 @@
 package com.fal.crudfilmapps.fragment
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -28,6 +31,7 @@ class FragmentHome : Fragment() {
     private val binding get() = _binding!!
     lateinit var adapterFilm: AdapterFilm
     lateinit var modelFilm: ViewModelFilm
+    lateinit var dataUserShared : SharedPreferences
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,6 +46,7 @@ class FragmentHome : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         //show list film
         showList()
+        dataUserShared = requireActivity().getSharedPreferences("dataUser", Context.MODE_PRIVATE)
         //VM
         modelFilm = ViewModelProvider(this).get(ViewModelFilm::class.java)
         modelFilm.allLiveData().observe(viewLifecycleOwner, Observer {
@@ -54,6 +59,11 @@ class FragmentHome : Fragment() {
         //Navigate to fragment Add
         binding.fbAddFilm.setOnClickListener {
             findNavController().navigate(R.id.action_fragmentHome_to_fragmentAdd)
+        }
+        binding.ivNotification.setOnClickListener{
+            clearData()
+            Toast.makeText(context, "Logout Berhasil", Toast.LENGTH_SHORT).show()
+            gotoLogin()
         }
     }
 
@@ -83,6 +93,16 @@ class FragmentHome : Fragment() {
                 }
 
             })
+    }
+
+    fun clearData(){
+        var pref = dataUserShared.edit()
+        pref.clear()
+        pref.apply()
+    }
+
+    fun gotoLogin(){
+        Navigation.findNavController(requireView()).navigate(R.id.action_fragmentHome_to_fragmentLogin)
     }
 
 

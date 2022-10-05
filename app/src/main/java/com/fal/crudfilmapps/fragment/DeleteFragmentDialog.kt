@@ -9,6 +9,8 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
+import com.fal.crudfilmapps.R
 import com.fal.crudfilmapps.databinding.FragmentDeleteDialogBinding
 import com.fal.crudfilmapps.viewModel.ViewModelFilm
 
@@ -27,24 +29,18 @@ class DeleteFragmentDialog : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        val builder = AlertDialog.Builder(context)
-//        builder.setView(binding.root)
-//
-//        val dialog = builder.create()
-//        dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
-
         binding.btnHapus.setOnClickListener{
             requireActivity().run {
                 var fetID = arguments?.getInt("delete",0)
                 Log.d("infoid",fetID.toString())
                 deleteFilm(fetID!!.toInt())
+                Navigation.findNavController(it).navigate(R.id.action_deleteFragmentDialog_to_fragmentHome)
             }
         }
 
-
-//        binding.btnBatal.setOnClickListener{
-//            dialog.dismiss()
-//        }
+        binding.btnBatal.setOnClickListener{
+            Navigation.findNavController(it).navigate(R.id.action_deleteFragmentDialog_to_fragmentHome)
+        }
     }
 
     fun deleteFilm(id : Int){

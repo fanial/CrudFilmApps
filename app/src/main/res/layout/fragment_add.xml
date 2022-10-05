@@ -96,21 +96,21 @@
             android:textColorHint="@color/primary_grey"
             android:fontFamily="@font/poppins_semibold"/>
 
-        <ImageView
-            android:id="@+id/ivPlaceImageAdd"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_gravity="center"
-            android:background="@color/primary_white"
-            android:src="@drawable/ic_baseline_image_24"/>
-
-        <ImageView
-            android:id="@+id/ivOpenImageGalery"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/ic_baseline_cloud_upload_24"
-            android:layout_gravity="center"/>
-
+        <EditText
+            android:id="@+id/etAddNImageFilm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/image"
+            android:textColor="@color/primary_black"
+            android:textSize="18sp"
+            android:textColorHint="@color/primary_grey"
+            android:fontFamily="@font/poppins_semibold"
+            android:layout_margin="5dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:background="@drawable/bg_et_add"/>
 
     </LinearLayout>
 

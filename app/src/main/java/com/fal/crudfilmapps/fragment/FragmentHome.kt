@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.fal.crudfilmapps.R
@@ -50,9 +51,10 @@ class FragmentHome : Fragment() {
         adapterFilm = AdapterFilm(ArrayList())
         binding.rvFilm.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         binding.rvFilm.adapter = adapterFilm
-
-
-
+        //Navigate to fragment Add
+        binding.fbAddFilm.setOnClickListener {
+            findNavController().navigate(R.id.action_fragmentHome_to_fragmentAdd)
+        }
     }
 
     override fun onDestroy() {

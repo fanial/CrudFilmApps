@@ -72,7 +72,11 @@
         android:id="@+id/fragmentAdd"
         android:name="com.fal.crudfilmapps.fragment.FragmentAdd"
         android:label="fragment_add"
-        tools:layout="@layout/fragment_add" />
+        tools:layout="@layout/fragment_add" >
+        <action
+            android:id="@+id/action_fragmentAdd_to_fragmentHome"
+            app:destination="@id/fragmentHome" />
+    </fragment>
     <fragment
         android:id="@+id/fragmentUpdate"
         android:name="com.fal.crudfilmapps.fragment.FragmentUpdate"

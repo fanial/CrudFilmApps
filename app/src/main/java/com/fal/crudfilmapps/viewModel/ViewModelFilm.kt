@@ -15,11 +15,13 @@ class ViewModelFilm : ViewModel() {
     lateinit var allData : MutableLiveData<List<ResponseDataFilmItem>>
     lateinit var updateFilm : MutableLiveData<List<PutResponseFilm>?>
     lateinit var deleteFilm : MutableLiveData<Int?>
+    lateinit var postFilm : MutableLiveData<ResponseDataFilmItem>
 
     init {
         allData = MutableLiveData()
         updateFilm = MutableLiveData()
         deleteFilm = MutableLiveData()
+        postFilm = MutableLiveData()
     }
 
     fun allLiveData() : MutableLiveData<List<ResponseDataFilmItem>>{
@@ -32,6 +34,10 @@ class ViewModelFilm : ViewModel() {
 
     fun deleteLiveDataFIlm() : MutableLiveData<Int?> {
         return deleteFilm
+    }
+
+    fun addLiveData(): MutableLiveData<ResponseDataFilmItem>{
+        return postFilm
     }
 
     //GET ALL Data from API
@@ -94,5 +100,28 @@ class ViewModelFilm : ViewModel() {
                 }
 
             })
+    }
+
+    //POST Data
+    fun postData(description: String, director: String, image: String, name: String){
+        RetrofitClient.instance.addData(DataFilm(description, director, image, name))
+            .enqueue(object : Callback<ResponseDataFilmItem>{
+                override fun onResponse(
+                    call: Call<ResponseDataFilmItem>,
+                    response: Response<ResponseDataFilmItem>,
+                ) {
+                    if (response.isSuccessful){
+                        postFilm.postValue(response.body())
+                    }else{
+                        error(response.message())
+                    }
+                }
+
+                override fun onFailure(call: Call<ResponseDataFilmItem>, t: Throwable) {
+                    postFilm.postValue(error(t.message.toString()))
+                }
+
+            })
+
     }
 }

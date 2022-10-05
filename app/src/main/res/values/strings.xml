@@ -16,6 +16,9 @@
     <string name="can_t_login">Username / Password salah</string>
     <string name="image">image</string>
     <string name="film_name">film name</string>
-    <string name="director">director</string>
+    <string name="director">Director</string>
     <string name="search">search</string>
+    <string name="add_film">Add Film</string>
+    <string name="description">Description</string>
+    <string name="upload">upload</string>
 </resources>

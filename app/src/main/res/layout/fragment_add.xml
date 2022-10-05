@@ -1,14 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/primary_purple"
     tools:context=".fragment.FragmentAdd">
 
-    <!-- TODO: Update blank fragment layout -->
+    <ImageView
+        android:id="@+id/ivGoHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_arrow_back_ios_24"
+        android:layout_margin="25dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0"/>
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/tvUploadFilm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/upload"
+        android:layout_margin="25dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:textColor="@color/primary_white"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
-</FrameLayout>
+    <LinearLayout
+        android:id="@+id/llAddFilm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="25dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/add_film"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textColor="@color/primary_white"
+            android:fontFamily="@font/poppins_extrabold" />
+
+        <EditText
+            android:id="@+id/etAddNameFilm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/name"
+            android:textColor="@color/primary_black"
+            android:textSize="18sp"
+            android:textColorHint="@color/primary_grey"
+            android:fontFamily="@font/poppins_semibold"
+            android:layout_margin="5dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:background="@drawable/bg_et_add"/>
+
+        <EditText
+            android:id="@+id/etAddDirectorFilm"
+            android:layout_width="match_parent"
+            android:paddingLeft="10dp"
+            android:layout_margin="5dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_et_add"
+            android:hint="@string/director"
+            android:textColor="@color/primary_black"
+            android:textSize="18sp"
+            android:textColorHint="@color/primary_grey"
+            android:fontFamily="@font/poppins_semibold"/>
+
+        <EditText
+            android:id="@+id/etAddDescF"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:paddingLeft="10dp"
+            android:layout_margin="5dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:gravity="top"
+            android:background="@drawable/bg_et_add"
+            android:hint="@string/description"
+            android:textColor="@color/primary_black"
+            android:textSize="18sp"
+            android:textColorHint="@color/primary_grey"
+            android:fontFamily="@font/poppins_semibold"/>
+
+        <ImageView
+            android:id="@+id/ivPlaceImageAdd"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:background="@color/primary_white"
+            android:src="@drawable/ic_baseline_image_24"/>
+
+        <ImageView
+            android:id="@+id/ivOpenImageGalery"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_baseline_cloud_upload_24"
+            android:layout_gravity="center"/>
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
